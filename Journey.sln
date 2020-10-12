@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Journey", "Journey\Journey.csproj", "{D7B7C602-0C2B-4BE6-B9D3-10992965ED7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Journey.Business", "Journey.Business\Journey.Business.csproj", "{B2E35FC5-3D28-473B-8F5F-E46E39C9D451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Journey.Test", "Journey.Test\Journey.Test.csproj", "{01A6F9CB-BCE1-4D50-9CB6-CF1AD0F869B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{D7B7C602-0C2B-4BE6-B9D3-10992965ED7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7B7C602-0C2B-4BE6-B9D3-10992965ED7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7B7C602-0C2B-4BE6-B9D3-10992965ED7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E35FC5-3D28-473B-8F5F-E46E39C9D451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E35FC5-3D28-473B-8F5F-E46E39C9D451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E35FC5-3D28-473B-8F5F-E46E39C9D451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E35FC5-3D28-473B-8F5F-E46E39C9D451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A6F9CB-BCE1-4D50-9CB6-CF1AD0F869B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A6F9CB-BCE1-4D50-9CB6-CF1AD0F869B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A6F9CB-BCE1-4D50-9CB6-CF1AD0F869B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A6F9CB-BCE1-4D50-9CB6-CF1AD0F869B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
