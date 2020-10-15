@@ -1,0 +1,95 @@
+﻿@model JourneyResponseViewModel
+
+@if (Model != null)
+{
+
+    <div class="col-md-5">
+        <div class="card card-info">
+            <div class="card text-white">
+                <form method="post" asp-controller="Home" asp-action="MainPage">
+                    <input type="hidden" asp-for="SessionId" />
+                    <input type="hidden" asp-for="DeviceId" />
+                    <input type="hidden" asp-for="DepartureDate" />
+                    <input type="hidden" asp-for="OriginId" />
+                    <input type="hidden" asp-for="DestinationId" />
+                    <div class="card-header bg-primary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        Geri
+                                    </button>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="column">
+                                        <p style="text-align:center">@Model.OriginLocation-@Model.DestinationLocation</p>
+                                        <p style="text-align:center">
+                                            @Model.DepartureDate.ToString("dd.MM.yyyy")
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="card-body">
+                    @foreach (var item in Model.Journeys)
+                    {
+                        <div class="card">
+                            <div class="card-body text-secondary">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="column">
+                                            <p style="color:#3640B1">Kalkış-Varış</p>
+                                        </div>
+                                        <div class="column">
+                                            <p style="color:#192289">
+                                                @item.DepartureTime.ToShortTimeString() -
+                                                @item.ArrivalTime.ToShortTimeString()
+                                            </p>
+
+                                        </div>
+                                        <div class="column">
+                                            <p style="color:#083145">
+                                                @item.OriginName -
+                                                @item.DestinationName
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-sm btn-danger">
+                                            @String.Format("{0:0,0}", item.Price) ₺
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>$("#btnBack").click(function (e) {
+        e.preventDefault();
+
+        var data = new Object();
+        data.SessionId = $('#SessionId').val();
+        data.DeviceId = $('#DeviceId').val();
+        data.OriginId = $('#OriginId').val();
+        data.DestinationId = $('#DestinationId').val();
+        data.DepartureDate = $('#DepartureDate').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/BackIndex",
+            data: data,
+            success: function (result) {
+                return result.Result;
+            }
+
+        });
+    });</script>

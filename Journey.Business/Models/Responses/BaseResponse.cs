@@ -1,4 +1,5 @@
 ﻿using System;
+using Journey.Business.Enums;
 using Newtonsoft.Json;
 
 namespace Journey.Business.Models.Responses
@@ -6,7 +7,7 @@ namespace Journey.Business.Models.Responses
     public class BaseResponse
     {
         [JsonProperty("status")]
-        public bool Status { get; set; }
+        public ResponseStatus Status { get; set; }
         [JsonProperty("message")]
         public string Message { get; set; }
         [JsonProperty("user-message")]
